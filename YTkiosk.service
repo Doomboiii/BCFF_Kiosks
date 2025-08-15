@@ -1,0 +1,15 @@
+[Unit]
+Description=YouTube Livestream Kiosk
+After=multi-user.target
+
+[Service]
+Type=simple
+User=biz
+Environment=DISPLAY=:0
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/biz/YTkiosk.sh 
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

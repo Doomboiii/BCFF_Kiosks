@@ -1,0 +1,15 @@
+[Unit]
+Description=Run kiosk script at startup
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=biz
+ExecStart=/home/biz/kiosk.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+#Dont forget to enable it, doofus. 
+#sudo systemctl enable kiosk.service
